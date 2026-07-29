@@ -348,11 +348,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ===================== CTA BUTTONS ===================== */
 .cta-btn {
+  -webkit-appearance: none;
+  appearance: none;
   display: inline-block;
   padding: 15px 32px;
   border-radius: 999px;
   font-size: 0.95rem;
   font-weight: 500;
+  font-family: inherit;
+  background: none;
   border: 1.5px solid currentColor;
   transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -690,12 +694,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   .ps-arrow { justify-self: flex-start; transform: rotate(90deg); }
 
   .process { grid-template-columns: 1fr; }
-  .process-step:not(:last-child) .step-num::after {
+  .process-step { position: relative; }
+  .process-step:not(:last-child) .step-num::after { content: none; }
+  .process-step:not(:last-child)::after {
+    content: '\2192';
+    position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: 0;
-    margin-top: calc(var(--process-gap) / 2 - 6px);
     transform: translateX(-50%) rotate(90deg);
+    margin-top: calc(var(--process-gap) / 2 - 8px);
+    color: var(--muted);
+    font-size: 1.1rem;
   }
 
   .menu-toggle { display: flex; }
