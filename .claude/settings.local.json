@@ -26,7 +26,9 @@
       "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_records_for_table",
       "mcp__f782e70b-c539-4369-bfab-625ef85634f9__delete_records_for_table",
       "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_automations",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s \"https://blytheworth.com/index.html\")",
+      "Bash(curl -s \"https://blytheworth.com/script.js\")"
     ]
   }
 }
