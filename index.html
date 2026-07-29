@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blytheworth | Business Baseline Assessment</title>
+<meta name="description" content="Blytheworth helps B2B companies assess, analyze, and scale their business through the Business Baseline Assessment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="site-header" id="top">
+  <div class="nav-wrap">
+    <a href="#top" class="logo">
+      <img src="assets/logo.jpg" alt="Blytheworth" class="logo-img">
+      <span class="logo-text">Blytheworth</span>
+    </a>
+    <nav class="main-nav">
+      <a href="#about">About Us</a>
+      <a href="#assessment">Business Baseline</a>
+      <a href="#diagnostic">Frameworks</a>
+    </nav>
+    <button class="sound-toggle" id="soundToggle" aria-label="Toggle sound" title="Toggle typing sound">
+      <span id="soundIcon">&#128266;</span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO / TYPING ================= -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="typed-lines" id="typedLines">
+      <p class="typed-line" id="line1"><span class="typed-text"></span></p>
+      <p class="typed-line" id="line2"><span class="typed-text"></span></p>
+      <p class="typed-line" id="line3"><span class="typed-text"></span></p>
+    </div>
+  </div>
+  <button class="scroll-cue" id="scrollCue" aria-label="Scroll to explore">
+    <span>Explore</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</section>
+
+<!-- ================= DIAGNOSTIC BOXES ================= -->
+<section class="diagnostic" id="diagnostic">
+  <div class="section-inner">
+    <h2 class="section-kicker">Where is growth actually breaking down?</h2>
+    <div class="box-grid">
+
+      <button class="diag-box box-blue" data-target="#traffic">
+        <span class="diag-title">Traffic</span>
+        <ul>
+          <li>Not enough leads are coming in (inbound)</li>
+          <li>We don't generate enough leads or conversation stops too soon (outbound)</li>
+        </ul>
+        <span class="diag-arrow">&#8594;</span>
+      </button>
+
+      <button class="diag-box box-purple" data-target="#conversion">
+        <span class="diag-title">Conversion</span>
+        <ul>
+          <li>We don't have a repeatable formula/system to convert leads into customers</li>
+          <li>Conversion has dropped or deal time has increased significantly over the last 12 months</li>
+        </ul>
+        <span class="diag-arrow">&#8594;</span>
+      </button>
+
+      <button class="diag-box box-red" data-target="#systems">
+        <span class="diag-title">Systems</span>
+        <ul>
+          <li>We don't track leads (well enough)</li>
+          <li>Our tools don't contribute to more leads/sales</li>
+          <li>We don't use (automation) tools for lead generation, qualification, meetings</li>
+        </ul>
+        <span class="diag-arrow">&#8594;</span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= DETAIL: TRAFFIC ================= -->
+<section class="detail" id="traffic">
+  <div class="section-inner detail-inner">
+    <span class="detail-tag tag-blue">Traffic</span>
+    <h3 class="detail-title">Traffic</h3>
+    <p class="detail-copy">
+      If pipeline feels thin, it usually traces back to one of two places: not enough demand is coming in through
+      inbound, or your outbound motion isn't generating leads and conversations that go anywhere. Either way, the
+      result is the same &mdash; a sales team with too little to work with.
+    </p>
+    <ul class="detail-points">
+      <li>Not enough leads are coming in (inbound)</li>
+      <li>We don't generate enough leads or conversation stops too soon (outbound)</li>
+    </ul>
+    <a href="#assessment" class="cta-btn cta-blue">Get Your Business Baseline Assessment</a>
+  </div>
+</section>
+
+<!-- ================= DETAIL: CONVERSION ================= -->
+<section class="detail" id="conversion">
+  <div class="section-inner detail-inner">
+    <span class="detail-tag tag-purple">Conversion</span>
+    <h3 class="detail-title">Conversion</h3>
+    <p class="detail-copy">
+      Leads coming in is only half the equation. Without a repeatable process, results depend on who happens to be
+      working the deal &mdash; and when conversion drops or deals start taking longer to close, it's rarely obvious
+      why until you look under the hood.
+    </p>
+    <ul class="detail-points">
+      <li>We don't have a repeatable formula/system to convert leads into customers</li>
+      <li>Conversion has dropped or deal time has increased significantly over the last 12 months</li>
+    </ul>
+    <a href="#assessment" class="cta-btn cta-purple">Get Your Business Baseline Assessment</a>
+  </div>
+</section>
+
+<!-- ================= DETAIL: SYSTEMS ================= -->
+<section class="detail" id="systems">
+  <div class="section-inner detail-inner">
+    <span class="detail-tag tag-red">Systems</span>
+    <h3 class="detail-title">Systems</h3>
+    <p class="detail-copy">
+      Traffic and conversion problems are often symptoms of a systems problem. If leads aren't tracked well, tools
+      aren't pulling their weight, and automation isn't doing the heavy lifting on generation, qualification, or
+      meetings &mdash; growth stays capped no matter how hard the team works.
+    </p>
+    <ul class="detail-points">
+      <li>We don't track leads (well enough)</li>
+      <li>Our tools don't contribute to more leads/sales</li>
+      <li>We don't use (automation) tools for lead generation, qualification, meetings</li>
+    </ul>
+    <a href="#assessment" class="cta-btn cta-red">Get Your Business Baseline Assessment</a>
+  </div>
+</section>
+
+<!-- ================= ASSESSMENT (GREEN) ================= -->
+<section class="assessment" id="assessment">
+  <div class="section-inner">
+    <div class="assessment-card">
+      <span class="assessment-kicker">The Solution</span>
+      <h2 class="assessment-title">Blytheworth's Business Baseline Assessment</h2>
+
+      <div class="ps-box">
+        <div class="ps-row">
+          <span class="ps-problem">You don't know why growth has stalled</span>
+          <span class="ps-arrow">&#8594;</span>
+          <span class="ps-solution">A clear, data-backed diagnostic across Traffic, Conversion &amp; Systems</span>
+        </div>
+        <div class="ps-row">
+          <span class="ps-problem">Guesswork is driving your decisions</span>
+          <span class="ps-arrow">&#8594;</span>
+          <span class="ps-solution">A BlytheworthScore&trade; and Gap Report benchmarking your business</span>
+        </div>
+        <div class="ps-row">
+          <span class="ps-problem">No plan to fix what's holding you back</span>
+          <span class="ps-arrow">&#8594;</span>
+          <span class="ps-solution">An Activation Playbook with a clear path to scale</span>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="process-step">
+          <span class="step-num">1</span>
+          <span class="step-label">Pre-assessment<br><small>(when signing up)</small></span>
+        </div>
+        <span class="step-connector">&#8594;</span>
+        <div class="process-step">
+          <span class="step-num">2</span>
+          <span class="step-label">Customized Assessment<br><small>based on your business &amp; situation</small></span>
+        </div>
+        <span class="step-connector">&#8594;</span>
+        <div class="process-step">
+          <span class="step-num">3</span>
+          <span class="step-label">We analyze<br><small>your results</small></span>
+        </div>
+        <span class="step-connector">&#8594;</span>
+        <div class="process-step">
+          <span class="step-num">4</span>
+          <span class="step-label">Gap Report<br><small>with BlytheworthScore&trade; &amp; Activation Playbook via 1:1 online delivery call</small></span>
+        </div>
+        <span class="step-connector">&#8594;</span>
+        <div class="process-step">
+          <span class="step-num">5</span>
+          <span class="step-label">Upgrade<br><small>from done-by-you to done-for-you</small></span>
+        </div>
+      </div>
+
+      <div class="delivery-badge">Current delivery time: <strong>3 business days</strong></div>
+
+      <a href="#" class="cta-btn cta-green" id="assessmentCta">Start Your Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT (placeholder) ================= -->
+<section class="about" id="about">
+  <div class="section-inner about-inner">
+    <h3 class="about-title">About Blytheworth</h3>
+    <p class="about-copy">
+      <!-- Placeholder copy — replace with real company bio -->
+      Blytheworth works with B2B companies from $0&ndash;$5M in annual revenue &mdash; across outbound sales and
+      marketing, whether internal or outsourced &mdash; to diagnose exactly what's limiting growth and build a clear,
+      practical path to scale.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CLOSING MATRIX ================= -->
+<section class="matrix-section" id="closing">
+  <canvas id="matrixCanvas"></canvas>
+  <div class="matrix-overlay">
+    <p class="matrix-line" id="matrixLine1"><span class="matrix-text"></span></p>
+    <p class="matrix-line" id="matrixLine2"><span class="matrix-text"></span></p>
+    <a href="#assessment" class="cta-btn cta-green matrix-cta" id="matrixCta">Let's Scale</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Blytheworth. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
