@@ -203,7 +203,7 @@
 
       <div class="delivery-badge">Current delivery time: <strong>3 business days</strong></div>
 
-      <a href="#" class="cta-btn cta-green" id="assessmentCta">Start Your Assessment</a>
+      <a href="#lead-form" class="cta-btn cta-green" id="assessmentCta">Start Your Assessment</a>
     </div>
   </div>
 </section>
@@ -218,6 +218,49 @@
       marketing, whether internal or outsourced &mdash; to diagnose exactly what's limiting growth and build a clear,
       practical path to scale.
     </p>
+  </div>
+</section>
+
+<!-- ================= LEAD FORM ================= -->
+<section class="lead-form" id="lead-form">
+  <div class="section-inner lead-form-inner">
+    <h2 class="lead-form-title">Ready to find out what's holding you back?</h2>
+    <p class="lead-form-subtitle">Tell us a bit about your business and we'll be in touch.</p>
+
+    <form id="leadForm" class="lead-form-box" novalidate>
+      <div class="form-row">
+        <label for="lf-name">Name</label>
+        <input type="text" id="lf-name" name="name" autocomplete="name" required>
+      </div>
+
+      <div class="form-row">
+        <label for="lf-email">Email</label>
+        <input type="email" id="lf-email" name="email" autocomplete="email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="lf-company">Company</label>
+        <input type="text" id="lf-company" name="company" autocomplete="organization">
+      </div>
+
+      <div class="form-row">
+        <label>Bottleneck</label>
+        <div class="bottleneck-options">
+          <label class="radio-option"><input type="radio" name="bottleneck" value="Traffic" required> Traffic</label>
+          <label class="radio-option"><input type="radio" name="bottleneck" value="Conversion"> Conversion</label>
+          <label class="radio-option"><input type="radio" name="bottleneck" value="Systems"> Systems</label>
+          <label class="radio-option"><input type="radio" name="bottleneck" value="Other"> Other</label>
+        </div>
+        <input type="text" id="lf-other" name="bottleneckDetail" class="other-input hidden" placeholder="Please specify">
+      </div>
+
+      <button type="submit" class="cta-btn cta-gold lead-submit" id="leadSubmitBtn">Submit</button>
+      <p class="form-error" id="formError" role="alert"></p>
+    </form>
+
+    <div class="lead-form-success" id="leadSuccess" hidden>
+      <p>We will reach out to you within 24 hours.</p>
+    </div>
   </div>
 </section>
 

@@ -125,11 +125,78 @@ const diagObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.25 });
 diagObserver.observe(diagnosticSection);
 
-// ===================== ASSESSMENT CTA PLACEHOLDER =====================
-document.getElementById('assessmentCta').addEventListener('click', (e) => {
+// ===================== LEAD FORM =====================
+const AIRTABLE_BASE_ID = 'appFveTTQXKfQkP7R';
+const AIRTABLE_TABLE_ID = 'tblXlPYCLGyCxyLkQ';
+const AIRTABLE_TOKEN = 'patJPVVNaZR0Hc5nI.b6fe6a2feb0eaaeb09ee359b62db3bf4da5ba30d60952e190016f34e3701717e';
+
+const leadForm = document.getElementById('leadForm');
+const leadSuccess = document.getElementById('leadSuccess');
+const formError = document.getElementById('formError');
+const leadSubmitBtn = document.getElementById('leadSubmitBtn');
+const otherInput = document.getElementById('lf-other');
+const bottleneckRadios = document.querySelectorAll('input[name="bottleneck"]');
+
+bottleneckRadios.forEach(radio => {
+  radio.addEventListener('change', () => {
+    const isOther = radio.value === 'Other' && radio.checked;
+    if (isOther) {
+      otherInput.classList.remove('hidden');
+      otherInput.required = true;
+    } else if (document.querySelector('input[name="bottleneck"]:checked')?.value !== 'Other') {
+      otherInput.classList.add('hidden');
+      otherInput.required = false;
+      otherInput.value = '';
+    }
+  });
+});
+
+leadForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  // TODO: wire this up to your booking/contact flow
-  alert('TODO: connect this button to your booking or contact flow.');
+  formError.textContent = '';
+
+  if (!leadForm.checkValidity()) {
+    leadForm.reportValidity();
+    return;
+  }
+
+  const name = document.getElementById('lf-name').value.trim();
+  const email = document.getElementById('lf-email').value.trim();
+  const company = document.getElementById('lf-company').value.trim();
+  const bottleneck = document.querySelector('input[name="bottleneck"]:checked')?.value;
+  const bottleneckDetail = otherInput.value.trim();
+
+  leadSubmitBtn.disabled = true;
+  leadSubmitBtn.textContent = 'Submitting...';
+
+  try {
+    const res = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${AIRTABLE_TOKEN}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        fields: {
+          'Name': name,
+          'Email': email,
+          'Company': company,
+          'Bottleneck': bottleneck,
+          'Bottleneck Detail': bottleneckDetail,
+          'Status': 'New'
+        }
+      })
+    });
+
+    if (!res.ok) throw new Error(`Airtable responded ${res.status}`);
+
+    leadForm.hidden = true;
+    leadSuccess.hidden = false;
+  } catch (err) {
+    formError.textContent = "Something went wrong submitting the form. Please try again, or email us directly.";
+    leadSubmitBtn.disabled = false;
+    leadSubmitBtn.textContent = 'Submit';
+  }
 });
 
 // ===================== MATRIX RAIN + CLOSING TYPE =====================
