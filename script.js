@@ -1,50 +1,19 @@
-// ===================== AUDIO (synthesized typewriter click) =====================
-let audioCtx = null;
-let soundEnabled = true;
+// ===================== MOBILE MENU =====================
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
 
-function getAudioCtx() {
-  if (!audioCtx) {
-    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  }
-  return audioCtx;
-}
-
-function unlockAudio() {
-  const ctx = getAudioCtx();
-  if (ctx.state === 'suspended') ctx.resume();
-}
-
-['pointerdown', 'keydown', 'touchstart', 'wheel'].forEach(evt => {
-  document.addEventListener(evt, unlockAudio, { once: true, passive: true });
+menuToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('open');
+  menuToggle.classList.toggle('open', isOpen);
+  menuToggle.setAttribute('aria-expanded', isOpen);
 });
 
-function playKeySound() {
-  if (!soundEnabled) return;
-  try {
-    const ctx = getAudioCtx();
-    if (ctx.state === 'suspended') return;
-    const now = ctx.currentTime;
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    const freq = 700 + Math.random() * 500;
-    osc.type = 'square';
-    osc.frequency.setValueAtTime(freq, now);
-    gain.gain.setValueAtTime(0.0001, now);
-    gain.gain.exponentialRampToValueAtTime(0.045, now + 0.004);
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.03);
-    osc.connect(gain).connect(ctx.destination);
-    osc.start(now);
-    osc.stop(now + 0.035);
-  } catch (e) { /* audio not available */ }
-}
-
-const soundToggle = document.getElementById('soundToggle');
-const soundIcon = document.getElementById('soundIcon');
-soundToggle.addEventListener('click', () => {
-  unlockAudio();
-  soundEnabled = !soundEnabled;
-  soundIcon.innerHTML = soundEnabled ? '&#128266;' : '&#128263;';
-  soundToggle.style.opacity = soundEnabled ? '1' : '0.5';
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    menuToggle.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
 });
 
 // ===================== HERO TYPING =====================
@@ -73,7 +42,6 @@ function typeLine(lineIndex, callback) {
   function step() {
     if (i < line.text.length) {
       target.textContent += line.text[i];
-      if (line.text[i] !== ' ') playKeySound();
       i++;
       setTimeout(step, line.speed + Math.random() * 40);
     } else {
@@ -271,7 +239,6 @@ function typeClosingLine(index, done) {
   function step() {
     if (i < line.text.length) {
       target.textContent += line.text[i];
-      if (line.text[i] !== ' ') playKeySound();
       i++;
       setTimeout(step, line.speed + Math.random() * 30);
     } else {
