@@ -8,7 +8,24 @@
       "Bash(git rebase *)",
       "Bash(git stash *)",
       "Bash(git config *)",
-      "Bash(security find-internet-password *)"
+      "Bash(security find-internet-password *)",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_workspaces",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_bases",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__create_base",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__get_create_automation_instructions",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__create_automation",
+      "Bash(lsof -ti:8934)",
+      "Bash(xargs kill -9)",
+      "Bash(nohup python3 -m http.server 8934)",
+      "Bash(disown)",
+      "Bash(curl -sI http://localhost:8934/)",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__get_automation",
+      "Bash(curl -s -X POST https://hooks.airtable.com/workflows/v1/genericWebhook/appFveTTQXKfQkP7R/wfllkDX0YNu0zjBfW/wtrN0SbR8C3NYNZf0 -H 'Content-Type: application/json' -d '{\"name\":\"Jane Sample\",\"email\":\"jane@example.com\",\"company\":\"Example Co\",\"bottleneck\":\"Traffic\",\"bottleneckDetail\":\"\"}')",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__update_automation",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__delete_automation",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_records_for_table",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__delete_records_for_table",
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_automations"
     ]
   }
 }
