@@ -25,7 +25,8 @@
       "mcp__f782e70b-c539-4369-bfab-625ef85634f9__delete_automation",
       "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_records_for_table",
       "mcp__f782e70b-c539-4369-bfab-625ef85634f9__delete_records_for_table",
-      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_automations"
+      "mcp__f782e70b-c539-4369-bfab-625ef85634f9__list_automations",
+      "Bash(python3 -c ' *)"
     ]
   }
 }
